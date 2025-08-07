@@ -57,6 +57,9 @@ group :development, :test do
 
   # テスト用モデルデータ
   gem "factory_bot_rails"
+
+  # シンプルカバレッジ測れるやつ
+  gem 'simplecov'
 end
 
 group :development do
