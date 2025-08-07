@@ -59,7 +59,7 @@ group :development, :test do
   gem "factory_bot_rails"
 
   # シンプルカバレッジ測れるやつ
-  gem 'simplecov'
+  gem "simplecov"
 end
 
 group :development do
