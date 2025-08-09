@@ -1,24 +1,31 @@
-# README
+## 環境構築方法
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### 環境構築
+docker compose build --no-cache
 
-Things you may want to cover:
+docker compose run --rm web gem install rails
 
-* Ruby version
+docker compose up -d
 
-* System dependencies
+### DB環境構築
+docker compose exec web rails db:create
 
-* Configuration
+docker compose exec web rails db:migrate
 
-* Database creation
+docker compose cp db/seeds.rb web:/rails/db/seeds.rb
 
-* Database initialization
+docker compose exec web rails db:seed
 
-* How to run the test suite
+### tailswindcssのインストール
+docker compose run --rm web rails javascript:install:esbuild
 
-* Services (job queues, cache servers, search engines, etc.)
+docker compose run --rm web rails css:install:tailwind
 
-* Deployment instructions
+docker compose down
 
-* ...
+docker compose build --no-cache
+
+docker compose up -d
+
+http://localhost:3000/books にアクセス
+
