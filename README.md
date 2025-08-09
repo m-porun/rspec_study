@@ -1,24 +1,18 @@
-# README
+## 環境構築方法
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+docker compose build --no-cache
 
-Things you may want to cover:
+docker compose run --rm web gem install rails
 
-* Ruby version
+docker compose up -d
 
-* System dependencies
+docker compose exec web rails db:create
 
-* Configuration
+docker compose exec web rails db:migrate
 
-* Database creation
+docker compose cp db/seeds.rb web:/rails/db/seeds.rb
 
-* Database initialization
+docker compose exec web rails db:seed
 
-* How to run the test suite
+http://localhost:3000/books にアクセス
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
