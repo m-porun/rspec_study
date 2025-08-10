@@ -62,7 +62,7 @@ group :development, :test do
   gem "simplecov"
 
   gem "capybara"
-  gem 'selenium-webdriver'  # ブラウザテスト用（必要に応じて）
+  gem "selenium-webdriver"  # ブラウザテスト用（必要に応じて）
 end
 
 group :development do
