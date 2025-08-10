@@ -1,12 +1,15 @@
-<% content_for :title, "Editing book" %>
+<div class="max-w-4xl mx-auto p-6">
+  <% content_for :title, "編集画面" %>
 
-<h1>Editing book</h1>
+  <h1 class="text-4xl font-bold text-gray-800 mb-8 border-b-2 border-gray-200 pb-4">編集画面</h1>
 
-<%= render "form", book: @book %>
+  <div class="bg-white rounded-lg shadow-sm border border-gray-100 p-6 mb-6">
+    <%= render "form", book: @book %>
+  </div>
 
-<br>
-
-<div>
-  <%= link_to "Show this book", @book %> |
-  <%= link_to "Back to books", books_path %>
+  <div class="flex gap-4">
+    <%= link_to "本詳細に戻る", @book, class: "inline-block bg-gray-500 hover:bg-gray-700 text-white font-medium py-2 px-4 rounded text-sm transition duration-200 ease-in-out" %>
+    <span class="text-gray-400">|</span>
+    <%= link_to "一覧ページに戻る", books_path, class: "inline-block bg-blue-500 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded text-sm transition duration-200 ease-in-out" %>
+  </div>
 </div>
