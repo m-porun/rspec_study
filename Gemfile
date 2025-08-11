@@ -60,6 +60,9 @@ group :development, :test do
 
   # シンプルカバレッジ測れるやつ
   gem "simplecov"
+
+  gem "capybara"
+  gem "selenium-webdriver"  # ブラウザテスト用（必要に応じて）
 end
 
 group :development do
