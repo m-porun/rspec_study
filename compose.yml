@@ -6,7 +6,7 @@ services: # コンテナの定義開始
       TZ: Asia/Tokyo # タイムゾーンを日本に設定
       POSTGRES_PASSWORD: password # データベースのパスワード設定
     volumes: # データの永続化設定
-      - postgresql_data:/var/lib/postgresql # DBデータを永続化
+      - postgresql_data:/var/lib/postgresql/data # DBデータを永続化
     ports: # ポート設定
       - 5432:5432
     healthcheck: # コンテナの健康チェック設定
@@ -19,7 +19,7 @@ services: # コンテナの定義開始
     build: # Dockerイメージのビルド設定
       context: .  # ビルドコンテキストはカレントディレクトリ
       dockerfile: Dockerfile.dev # なんちゃって本番環境
-    command: bash -c "bundle install && bundle exec rails db:prepare && rm -f tmp/pids/server.pid && ./bin/dev"
+    command: bash -c "bundle install && bundle exec rails db:create db:migrate && rm -f tmp/pids/server.pid && ./bin/dev"
     # ↑ サーバー起動時のコマンド：
     # - bundle install: 必要なgemをインストール
     # - rails db:prepare: DBの準備
