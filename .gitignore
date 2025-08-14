@@ -28,7 +28,11 @@
 !/tmp/storage/
 !/tmp/storage/.keep
 
-/public/assets
+# Ignore compiled assets but keep test assets and directory structure
+/public/assets/*
+!/public/assets/.keep
+!/public/assets/application.js
+!/public/assets/.propshaft-manifest.json
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
