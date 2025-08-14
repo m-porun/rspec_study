@@ -44,3 +44,6 @@
 
 # カバレッジファイルは非管理
 /coverage/
+
+# Makefileは環境固有のため非管理
+Makefile
