@@ -28,15 +28,18 @@
 !/tmp/storage/
 !/tmp/storage/.keep
 
-/public/assets
-
+# Ignore compiled assets but keep test assets and directory structure
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
 /app/assets/builds/*
 !/app/assets/builds/.keep
+!/app/assets/builds/application.js
 
 /node_modules
 
 # カバレッジファイルは非管理
 /coverage/
+
+# Makefileは環境固有のため非管理
+Makefile

@@ -17,6 +17,11 @@ Rails.application.configure do
 
   # Configure public file server for tests with cache-control for performance.
   config.public_file_server.headers = { "cache-control" => "public, max-age=3600" }
+  config.public_file_server.enabled = true
+
+  # アセットパイプラインの設定をテスト環境用に調整
+  config.assets.compile = true
+  config.assets.debug = false
 
   # Show full error reports.
   config.consider_all_requests_local = true
