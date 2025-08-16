@@ -47,7 +47,7 @@ RSpec.configure do |config|
   # instead of true.
   config.use_transactional_fixtures = true
 
-    # Configure Capybara for system tests
+  # Configure Capybara for system tests
   config.before(:each, type: :system) do
     driven_by :rack_test
   end
