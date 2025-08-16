@@ -48,7 +48,6 @@ RSpec.describe "Books", type: :system do
     before do
       @book = Book.create!(title: "それから", author: "夏目漱石")
     end
-
     it "編集フォームが表示される" do
       # 編集画面に遷移しましょう(編集画面のpathはedit_path(@book))
 
@@ -90,6 +89,7 @@ RSpec.describe "Books", type: :system do
         # 更新ボタンをクリックしましょう（「Update Book」）
 
         # 更新が成功したことを確認しましょう
+
 
         # データベースでも更新されていることを確認
         # 3行下のコメントアウトを外してください
